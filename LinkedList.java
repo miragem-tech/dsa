@@ -6,14 +6,13 @@ public class LinkedList {
     public void insert(int data) {
         Node newNode = new Node(data);
         newNode.next = this.head;
-        newNode.prev = null;
+        newNode.prev = this.tail;
 
         if (this.head != null) {
             this.head.prev = newNode;
         }
 
         this.head = newNode;
-        this.head.prev = this.tail;
 
         if (size == 0) {
             this.tail = this.head;
